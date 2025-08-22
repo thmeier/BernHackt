@@ -2,10 +2,12 @@
 	"name": "BernHackt",
 	"packageManager": "yarn@4.4.1",
 	"scripts": {
-		"dev": "yarn workspaces foreach -Api run dev"
+		"dev": "yarn workspaces foreach -Api run dev",
+		"build": "yarn workspaces foreach -At run build"
 	},
 	"workspaces": [
 		"backend",
-		"frontend"
+		"frontend",
+		"interfaces"
 	]
 }
