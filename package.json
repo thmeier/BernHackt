@@ -1,0 +1,11 @@
+{
+	"name": "BernHackt",
+	"packageManager": "yarn@4.4.1",
+	"scripts": {
+		"dev": "yarn workspaces foreach -Api run dev"
+	},
+	"workspaces": [
+		"backend",
+		"frontend"
+	]
+}
