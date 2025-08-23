@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IProduct } from "interfaces";
+import { ILocation, IProduct } from "interfaces";
 import { useEffect, useState } from "preact/hooks";
 
 let timeout = null;
@@ -7,6 +7,9 @@ let timeout = null;
 export function Store() {
 	const [query, setQuery] = useState('');
 	const [foundArticles, setFoundArticles] = useState<IProduct[]>([]);
+  const [queryLocation, setQueryLocation] = useState<ILocation>()
+  const [foundLocation, setFoundLocation] = useState<ILocation>()
+  var target = ''
 
 	useEffect(() => {
 		if (timeout) {
@@ -20,12 +23,26 @@ export function Store() {
 		}, 300);
 	}, [query]);
 
+  useEffect(() => {
+    axios.get('http://localhost:3000/location/'+queryLocation).then((response) => {
+      setFoundLocation(response.data.name)
+    })
+  }, [queryLocation]
+) 
+
 	return (
 		<div>
 			<div>
 				<input value={query} onChange={e => setQuery(e.currentTarget.value)} placeholder={'Search'} />
 				<div style={{ display: "flex", flexDirection: "column" }}>
-					{foundArticles.map((object, i) => <div><button>{object.name}</button></div>)}
+					{foundArticles.map((object, i) => <div><button onClick={()=> {
+             setQueryLocation(object.locationId)
+          }
+           
+          }>{object.name}</button></div>)}
+          <div>
+            <button>{foundLocation}</button>
+          </div>
 				</div>
 			</div>
 			<a href="./" class="button"><button>Home</button></a>
