@@ -58,8 +58,8 @@ app.get('/location:id', (req, res) => {
 // Search route
 app.get('/search/:query', (req, res) => {
 	res.send({
-		products: products.filter(p => p.name.includes(req.params.query)),
-		categories: categories.filter(p => p.name.includes(req.params.query)),
+		products: products.filter(p => p.name.toLowerCase().includes(req.params.query.toLowerCase())),
+		categories: categories.filter(p => p.name.toLowerCase().includes(req.params.query.toLowerCase())),
 	});
 });
 
