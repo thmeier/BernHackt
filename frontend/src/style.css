@@ -1,6 +1,6 @@
 body {
 	background-color: rgba(26, 20, 20, 0.884);
-	color: #cf2028;
+	color: #e20026;
 	font-size: 1rem;
 }
 
@@ -12,7 +12,7 @@ body {
 }
 
 .sep {
-	border-bottom: 2px solid #b31b20;
+	border-bottom: 2px solid #e20026;
 	margin-bottom: 5%;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 .searchContainer>div>*:not(button) {
-	border: 2px solid #b31b20;
+	border: 2px solid #e20026;
 	margin: 0;
 }
 
@@ -45,15 +45,13 @@ body {
 	border-radius: 12px;
 	padding: 2px 12px 2px 9px;
 	background: transparent;
-	color: #b31b20;
+	color: #e20026;
 	outline: 0px;
 	width: 100%;
 	font-size: 1rem;
 }
 
-.searchField[value=""] {
-	color: lightgray;
-}
+
 
 .searchButton {
 	position: absolute;
