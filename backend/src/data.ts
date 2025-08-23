@@ -25,6 +25,12 @@ export const products: IServerProduct[] = [
 		locationId: '9194a6fd-7492-419b-9708-14be317172e0',
 	},
 	{
+		id: 'fbf18433-2fbd-4856-86cf-ac9604062b0a',
+		name: 'Anderes Bier',
+		categoryId: 'a8aa090a-b5d4-4359-9aa1-b45e01ecb809',
+		locationId: '9194a6fd-7492-419b-9708-14be317172e0',
+	},
+	{
 		id: '01d0e97a-12a4-4835-b9f8-6790e0b99e1b',
 		name: 'Redbull',
 		categoryId: 'cd3264cf-2404-4df8-b242-6382baf32503',
