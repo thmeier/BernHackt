@@ -1,6 +1,7 @@
 body {
 	background-color: #505050;
 	color: white;
+	font-size: 1rem;
 }
 
 .header {
@@ -44,9 +45,14 @@ body {
 	border-radius: 12px;
 	padding: 2px 12px 2px 9px;
 	background: transparent;
-	color: lightgray;
+	color: white;
 	outline: 0px;
 	width: 100%;
+	font-size: 1rem;
+}
+
+.searchField[value=""] {
+	color: lightgray;
 }
 
 .searchButton {

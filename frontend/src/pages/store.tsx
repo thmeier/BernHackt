@@ -16,6 +16,13 @@ export function Store() {
 	const [queryLocation, setQueryLocation] = useState<ILocation>();
 	const [foundLocation, setFoundLocation] = useState<ILocation>();
 
+
+	function clearSearch(name: string) {
+		setResults(undefined);
+		setQuery(name);
+		setTimeout(() => clearTimeout(timeout), 10);
+	}
+
 	useEffect(() => {
 		if (query == '') {
 			setResults(undefined);
@@ -71,20 +78,24 @@ export function Store() {
 					</button>
 				</div>
 				{results && <div style={{ display: "flex", flexDirection: "column" }}>
-					{results.products.map((object, i) => (
+					{results.products.map((product, i) => (
 						<div onClick={() => {
-							setQueryLocation(object.locationId);
+							setQueryLocation(product.locationId);
+							clearSearch(product.name);
 						}}>
 							<FiTag />
-							{object.name}
+							{product.name}
 						</div>
 					)
 					)}
-					{results.categories.map((object, i) => <div
-						onClick={() => setLocation('./category/?q=' + object.name)}
+					{results.categories.map((category, i) => <div
+						onClick={() => {
+							setLocation('./category/?q=' + category.name);
+							clearSearch(category.name);
+						}}
 					>
 						<FiFolder />
-						{object.name}
+						{category.name}
 					</div>
 					)}
 				</div>}
