@@ -1,5 +1,38 @@
+import axios from "axios";
+import { IProduct } from "interfaces";
+import { useEffect, useState } from "preact/hooks";
+
+
 export function Store(){
+    const [query, setQuery] = useState('Search') // Declare a state variable...
+    const [foundArticles, setFoundArticles] = useState<IProduct[]>([])
+
+    
+
+
+    useEffect(()=>{
+      axios.get('http://localhost:3000/product/search/'+query).then((response)=>{
+        var found = response.data
+        var foundArticles= []
+        for (var i in found){          
+          foundArticles.push(found[i].name)
+        }
+        setFoundArticles(response.data)
+      }) 
+    }, [query]
+    )
     return <div>
+        <div>
+          <input value={query} onChange={e => setQuery(e.currentTarget.value)} />
+
+          <div style={{display:"flex",flexDirection:"column"}}>
+            
+              {foundArticles.map((object, i) => <div><button>{object.name}</button></div>)}
+            
+          </div>
+          <p>{JSON.stringify(foundArticles)}</p>
+          
+        </div>
         <a href="./" class="button"><button>Home</button></a>
 
         StorePage
@@ -8,7 +41,7 @@ export function Store(){
 
 
 
-          <g id="gestell1" fill="red" stroke-width="5" transform="translate(40,16)">
+          <g id="gestell1" stroke-width="5" transform="translate(40,16)">
             <desc>Oberer Teil des Gestells </desc>
             
               <rect id="00" width="27.5" height="20" x="0" y="0" stroke="black" fill="transparent" />

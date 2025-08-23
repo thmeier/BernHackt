@@ -8,6 +8,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"axios": "^1.11.0",
 		"interfaces": "workspace:^",
 		"preact": "^10.26.9"
 	},
