@@ -30,11 +30,16 @@ Mention any tech innovation if it’s impressive but keep it accessible.
 
 ## 5. Impact & Potential (2:00–2:40)
 
+Kunden könne schneller und glücklicher Ihr gewünschtes Produkt finden. Einkäufe werden nie mehr aus langen suchen bestehen sonder zielgerichtet zum gewünschten produkt führen.
+
 Who benefits, and how big is the potential impact/market/community?
 
 If time: mention how it could scale or evolve beyond the hackathon.
 
 ## 6. Call to Action / Closing (2:40–3:00)
+
+Wir glauben an eine Welt in der niemand mehr seine zeit verschwenden muss oder die der Angestellten um etwas zu finden das nicht umbedingt an dem Ort ist an dem man es erwartet. Wir hoffen das unser Produkt den entscheidenden unterschied sein wird.
+
 
 Wrap up with a vision statement: “We imagine a world where…”
 
