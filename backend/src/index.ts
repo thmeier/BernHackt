@@ -46,7 +46,7 @@ app.get('/category/search/:query', (req, res) => {
 });
 
 
-app.get('/location:id', (req, res) => {
+app.get('/location/:id', (req, res) => {
 	const location = locations.find(l => l.id == req.params.id);
 	if (!location) {
 		res.sendStatus(404);
