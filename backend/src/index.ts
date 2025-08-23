@@ -1,7 +1,9 @@
 import express from 'express';
 import { categories, locations, products } from './data';
+import cors from 'cors';
 
 const app = express();
+app.use(cors());
 
 // Product routes
 app.get('/product', (_, res) => {
@@ -51,6 +53,14 @@ app.get('/location:id', (req, res) => {
 	} else {
 		res.send(location);
 	}
+});
+
+// Search route
+app.get('/search/:query', (req, res) => {
+	res.send({
+		products: products.filter(p => p.name.includes(req.params.query)),
+		categories: categories.filter(p => p.name.includes(req.params.query)),
+	});
 });
 
 // Start the app
