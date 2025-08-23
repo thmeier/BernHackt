@@ -14,8 +14,19 @@ export function FloorMap(props: { location: string; }) {
 
 	return data && (
 		<div class={'map'}>
-			{data.items.map(i => (
-				<div style={{ position: 'relative', top: `min(${i.x}vh, ${i.x}vw)`, left: `min(${i.y}vh, ${i.y}vw)`, width: 'min(5vw, 5vh)', height: 'min(5vw, 5vh)', backgroundColor: i.id === props.location ? '#e20026' : '#710013' }} />
+			{data.items.filter(i => i.id === props.location).map(i => (
+				<div
+					key={i.id}
+					style={{
+						position: 'relative',
+						top: `min(${i.x}vh, ${i.x}vw)`,
+						left: `min(${i.y}vh, ${i.y}vw)`,
+						width: 'min(3vw, 3vh)',
+						height: 'min(3vw, 3vh)',
+						backgroundColor: i.id === props.location ? '#e20026' : '#710013'
+					}}
+					title={i.name}
+				/>
 			))}
 			<img src={SERVER_URL + 'img/' + data.background} />
 		</div>

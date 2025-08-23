@@ -48,6 +48,12 @@ export const products: IServerProduct[] = [
 		categoryId: 'cd3264cf-2404-4df8-b242-6382baf32503',
 		locationId: '8f3856eb-dfe7-4f4f-9b55-c6176bf0c350',
 	},
+	{
+		id: '44a14c5f-8c0b-4a7a-8f66-3b997b1edf79',
+		name: 'Caipi',
+		categoryId: '42fceff7-deb1-41ab-a4a0-ccd35ad8fd409',
+		locationId: '8afbbc96-1ed2-42b0-a32a-6d500a9b1197'
+	}
 ];
 
 export const locations: IServerLocation[] = [
@@ -56,18 +62,25 @@ export const locations: IServerLocation[] = [
 		name: 'Kühlschrank 1',
 		parentId: '43c56c77-adf8-4659-8483-33fcd5d663a9',
 		x: 30,
-		y: 60,
+		y: 58,
 	},
 	{
 		id: '8f3856eb-dfe7-4f4f-9b55-c6176bf0c350',
 		name: 'Kühlschrank 2',
 		parentId: '43c56c77-adf8-4659-8483-33fcd5d663a9',
-		x: 50,
-		y: 60,
+		x: 35,
+		y: 58,
+	},
+	{
+		id: '8afbbc96-1ed2-42b0-a32a-6d500a9b1197',
+		name: 'Caipi Bar',
+		parentId: '43c56c77-adf8-4659-8483-33fcd5d663a9',
+		x: 40,
+		y: 58,
 	},
 	{
 		id: '43c56c77-adf8-4659-8483-33fcd5d663a9',
-		background: 'test.svg',
+		background: 'floor1.svg',
 		name: 'BärnHäck2025',
 	}
 ];
