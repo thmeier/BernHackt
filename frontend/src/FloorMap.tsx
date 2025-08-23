@@ -16,14 +16,11 @@ export function FloorMap(props: { location: string; }) {
 		<div class={'map'}>
 			{data.items.filter(i => i.id === props.location).map(i => (
 				<div
+					class={'pointer'}
 					key={i.id}
 					style={{
-						position: 'relative',
 						top: `min(${i.x}vh, ${i.x}vw)`,
 						left: `min(${i.y}vh, ${i.y}vw)`,
-						width: 'min(3vw, 3vh)',
-						height: 'min(3vw, 3vh)',
-						backgroundColor: i.id === props.location ? '#e20026' : '#710013'
 					}}
 					title={i.name}
 				/>
