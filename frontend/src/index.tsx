@@ -4,12 +4,14 @@ import { Link, Route, Router, Switch } from "wouter";
 import { Startpage } from './pages/startpage';
 import './style.css';
 import { Store } from './pages/store';
+import { Category } from './pages/category';
 
 export function App() {
 	return (
 		<Router>
 			<Switch>
 				<Route path='/store' component={Store}/>
+				<Route path='/category' component={Category}/>
 				<Route component={Startpage}/>
 			</Switch>
 		</Router>

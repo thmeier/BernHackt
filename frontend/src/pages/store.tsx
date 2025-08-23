@@ -39,16 +39,19 @@ export function Store() {
 			<div>
 				<input value={query} onChange={e => setQuery(e.currentTarget.value)} placeholder={'Search'} />
 				<div style={{ display: "flex", flexDirection: "column" }}>
-					{foundArticles.map((object, i) => <div><button onClick={()=> {
+        <p>Articles</p>
+					{foundArticles.map((object, i) => <div>
+            
+            <button onClick={()=> {
              setQueryLocation(object.locationId)
           }
           }>{object.name}</button></div>)
           }
-          <p>Categories</p>
+          <p >Categories</p>
           {
             foundCategories.map((object, i) => <div> 
+              <a href={'./category/?q='+object.name} class="button"><button>{object.name}</button></a>
               
-              <button>{object.name}</button>
             </div>)
           }
           <div>
