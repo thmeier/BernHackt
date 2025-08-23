@@ -9,7 +9,8 @@
 	},
 	"dependencies": {
 		"interfaces": "workspace:^",
-		"preact": "^10.26.9"
+		"preact": "^10.26.9",
+		"react-icons": "^5.5.0"
 	},
 	"devDependencies": {
 		"@preact/preset-vite": "^2.10.2",
