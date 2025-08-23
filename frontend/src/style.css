@@ -1,6 +1,6 @@
 body {
-	background-color: #505050;
-	color: white;
+	background-color: rgb(39, 37, 39);
+	color: rgb(214, 144, 38);
 	font-size: 1rem;
 }
 
@@ -12,7 +12,7 @@ body {
 }
 
 .sep {
-	border-bottom: 2px solid white;
+	border-bottom: 2px solid rgb(214, 144, 38);
 	margin-bottom: 5%;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 .searchContainer>div>*:not(button) {
-	border: 2px solid white;
+	border: 2px solid rgb(214, 144, 38);
 	margin: 0;
 }
 
@@ -45,7 +45,7 @@ body {
 	border-radius: 12px;
 	padding: 2px 12px 2px 9px;
 	background: transparent;
-	color: white;
+	color: rgb(214, 144, 38);
 	outline: 0px;
 	width: 100%;
 	font-size: 1rem;
@@ -61,6 +61,7 @@ body {
 	margin: auto;
 	border: none;
 	background: transparent;
+	color:inherit;
 }
 
 .searchBubble:not(:last-child) .searchField {
