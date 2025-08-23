@@ -55,15 +55,15 @@ export const locations: IServerLocation[] = [
 		id: '9194a6fd-7492-419b-9708-14be317172e0',
 		name: 'Kühlschrank 1',
 		parentId: '43c56c77-adf8-4659-8483-33fcd5d663a9',
-		x: 100,
-		y: 250,
+		x: 30,
+		y: 60,
 	},
 	{
 		id: '8f3856eb-dfe7-4f4f-9b55-c6176bf0c350',
 		name: 'Kühlschrank 2',
 		parentId: '43c56c77-adf8-4659-8483-33fcd5d663a9',
 		x: 50,
-		y: 250,
+		y: 60,
 	},
 	{
 		id: '43c56c77-adf8-4659-8483-33fcd5d663a9',
