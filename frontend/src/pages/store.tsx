@@ -86,8 +86,7 @@ export function Store() {
 							<FiTag class="icon"/>
 							{product.name}
 						</div>
-					)
-					)}
+					))}
 					{results.categories.map((category, i) => <div
 						onClick={() => {
 							setLocation('./category/?q=' + category.name);
@@ -102,8 +101,8 @@ export function Store() {
 			</div>
 			{foundLocation && (
 				<div>
+					<p>Dein produkt ist in {foundLocation.name}</p>
 					<FloorMap location={foundLocation.id} />
-					<a>{foundLocation.name}</a>
 				</div>
 			)}
 		</div>
