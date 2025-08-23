@@ -13,9 +13,9 @@ export function FloorMap(props: { location: string; }) {
 	}, [props.location]);
 
 	return data && (
-		<div>
+		<div class={'map'}>
 			{data.items.map(i => (
-				<div style={{ position: 'relative', top: i.x, left: i.y, width: 10, height: 10, backgroundColor: i.id === props.location ? 'red' : 'blue' }} />
+				<div style={{ position: 'relative', top: `min(${i.x}vh, ${i.x}vw)`, left: `min(${i.y}vh, ${i.y}vw)`, width: 10, height: 10, backgroundColor: i.id === props.location ? 'red' : 'blue' }} />
 			))}
 			<img src={SERVER_URL + 'img/' + data.background} />
 		</div>

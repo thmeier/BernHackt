@@ -34,6 +34,13 @@ body {
 
 .searchContainer>div>:not(input) {
 	border-top-width: 0;
+	cursor: pointer;
+}
+
+.searchContainer>div>:not(input) svg {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
 }
 
 .searchContainer>div>*:last-child {
@@ -67,4 +74,20 @@ body {
 .searchBubble:not(:last-child) .searchField {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
+}
+
+.results {
+	display: flex;
+	flex-direction: column;
+}
+
+.map {
+	width: min(100vh, 100vw);
+	height: min(100vh, 100vw);
+}
+
+.map {
+	max-width: 100%;
+	max-height: 100%;
+	margin: 0 auto;
 }

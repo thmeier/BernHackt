@@ -77,7 +77,7 @@ export function Store() {
 						<FiSearch size={20} />
 					</button>
 				</div>
-				{results && <div style={{ display: "flex", flexDirection: "column" }}>
+				{results && <div class={'results'}>
 					{results.products.map((product, i) => (
 						<div onClick={() => {
 							setQueryLocation(product.locationId);
