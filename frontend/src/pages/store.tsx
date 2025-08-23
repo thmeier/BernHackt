@@ -1,62 +1,62 @@
 import axios from "axios";
 import { ICategory, ILocation, IProduct } from "interfaces";
 import { useEffect, useState } from "preact/hooks";
+import { FloorMap } from '../FloorMap';
+import { SERVER_URL } from '../static';
 
 let timeout = null;
 
 export function Store() {
 	const [query, setQuery] = useState('');
 	const [foundArticles, setFoundArticles] = useState<IProduct[]>([]);
-  const [queryLocation, setQueryLocation] = useState<ILocation>()
-  const [foundLocation, setFoundLocation] = useState<ILocation>()
-  const [foundCategories, setFoundCategories] = useState<ICategory[]>([])
-  
-  var target = ''
+	const [queryLocation, setQueryLocation] = useState<ILocation>();
+	const [foundLocation, setFoundLocation] = useState<ILocation>();
+	const [foundCategories, setFoundCategories] = useState<ICategory[]>([]);
 
-  
 	useEffect(() => {
 		if (timeout) {
 			clearTimeout(timeout);
 		}
 
 		timeout = setTimeout(() => {
-			axios.get('http://localhost:3000/search/' + query).then((response) => {
+			axios.get(SERVER_URL + 'search/' + query).then((response) => {
 				setFoundArticles(response.data.products);
-        setFoundCategories(response.data.categories)
+				setFoundCategories(response.data.categories);
 			});
 		}, 300);
 	}, [query]);
 
-  useEffect(() => {
-    axios.get('http://localhost:3000/location/' + queryLocation).then((response) => {
-      setFoundLocation(response.data.name)
-    })
-  }, [queryLocation]
-) 
+	useEffect(() => {
+		axios.get(SERVER_URL + 'location/' + queryLocation).then((response) => {
+			setFoundLocation(response.data);
+		});
+	}, [queryLocation]
+	);
 
 	return (
 		<div>
 			<div>
 				<input value={query} onChange={e => setQuery(e.currentTarget.value)} placeholder={'Search'} />
 				<div style={{ display: "flex", flexDirection: "column" }}>
-        <p>Articles</p>
+					<p>Articles</p>
 					{foundArticles.map((object, i) => <div>
-            
-            <button onClick={()=> {
-             setQueryLocation(object.locationId)
-          }
-          }>{object.name}</button></div>)
-          }
-          <p >Categories</p>
-          {
-            foundCategories.map((object, i) => <div> 
-              <a href={'./category/?q='+object.name} class="button"><button>{object.name}</button></a>
-              
-            </div>)
-          }
-          <div>
-            <a>{foundLocation}</a>
-          </div>
+
+						<button onClick={() => {
+							setQueryLocation(object.locationId);
+						}
+						}>{object.name}</button></div>)
+					}
+					<p >Categories</p>
+					{
+						foundCategories.map((object, i) => <div>
+							<a href={'./category/?q=' + object.name} class="button"><button>{object.name}</button></a>
+
+						</div>)
+					}
+					<div>
+						{foundLocation && <FloorMap location={foundLocation.id} />}
+						<a>{foundLocation?.name}</a>
+					</div>
 				</div>
 			</div>
 			<a href="./" class="button"><button>Home</button></a>

@@ -1,6 +1,9 @@
-import express from 'express';
-import { categories, locations, products } from './data';
 import cors from 'cors';
+import express from 'express';
+import fs from 'fs';
+import { categories, locations, products } from './data';
+import type { IServerLocation } from './extra';
+import path from 'path';
 
 const app = express();
 app.use(cors());
@@ -52,6 +55,39 @@ app.get('/location/:id', (req, res) => {
 		res.sendStatus(404);
 	} else {
 		res.send(location);
+	}
+});
+
+app.get('/location/:id/data', (req, res) => {
+	function findMain(location: IServerLocation) {
+		if (location.background == null) {
+			if (location.parentId == null) {
+				throw new Error('Invalid data');
+			}
+			return findMain(locations.find(l => l.id === location.parentId)!);
+		} else {
+			return location;
+		}
+	}
+
+	const location = locations.find(l => l.id == req.params.id);
+	if (!location) {
+		res.sendStatus(404);
+	} else {
+		const main = findMain(location)!;
+		res.send({
+			background: main.background,
+			items: locations.filter(l => l.parentId == main.id)
+		});
+	}
+});
+
+app.get('/img/:img', (req, res) => {
+	const fileName = 'floors/' + req.params.img;
+	if (fs.existsSync(fileName)) {
+		res.sendFile(path.resolve(fileName));
+	} else {
+		res.sendStatus(404);
 	}
 });
 
