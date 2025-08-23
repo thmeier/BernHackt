@@ -56,7 +56,7 @@ export function Store() {
 		<div class="container">
 			<div class="header">
 				<h1 class="title">StoreNameHere</h1>
-				<FiMenu class="menu" size={24} />
+				<FiMenu class="menu icon" size={24} />
 			</div>
 			<div class="sep" />
 			<div class={'searchContainer'}>
@@ -74,7 +74,7 @@ export function Store() {
 					>
 					</input>
 					<button class="searchButton">
-						<FiSearch size={20} />
+						<FiSearch class="icon" size={20} />
 					</button>
 				</div>
 				{results && <div class={'results'}>
@@ -83,7 +83,7 @@ export function Store() {
 							setQueryLocation(product.locationId);
 							clearSearch(product.name);
 						}}>
-							<FiTag />
+							<FiTag class="icon"/>
 							{product.name}
 						</div>
 					)
@@ -94,8 +94,8 @@ export function Store() {
 							clearSearch(category.name);
 						}}
 					>
-						<FiFolder />
-						{category.name}
+						<FiFolder class="icon"/>
+						<span class="category">{category.name}</span>
 					</div>
 					)}
 				</div>}
