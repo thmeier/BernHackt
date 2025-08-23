@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ILocation, IProduct } from "interfaces";
+import { ICategory, ILocation, IProduct } from "interfaces";
 import { useEffect, useState } from "preact/hooks";
 
 let timeout = null;
@@ -9,8 +9,11 @@ export function Store() {
 	const [foundArticles, setFoundArticles] = useState<IProduct[]>([]);
   const [queryLocation, setQueryLocation] = useState<ILocation>()
   const [foundLocation, setFoundLocation] = useState<ILocation>()
+  const [foundCategories, setFoundCategories] = useState<ICategory[]>([])
+  
   var target = ''
 
+  
 	useEffect(() => {
 		if (timeout) {
 			clearTimeout(timeout);
@@ -19,12 +22,13 @@ export function Store() {
 		timeout = setTimeout(() => {
 			axios.get('http://localhost:3000/search/' + query).then((response) => {
 				setFoundArticles(response.data.products);
+        setFoundCategories(response.data.categories)
 			});
 		}, 300);
 	}, [query]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/location/'+queryLocation).then((response) => {
+    axios.get('http://localhost:3000/location/' + queryLocation).then((response) => {
       setFoundLocation(response.data.name)
     })
   }, [queryLocation]
@@ -38,10 +42,17 @@ export function Store() {
 					{foundArticles.map((object, i) => <div><button onClick={()=> {
              setQueryLocation(object.locationId)
           }
-           
-          }>{object.name}</button></div>)}
+          }>{object.name}</button></div>)
+          }
+          <p>Categories</p>
+          {
+            foundCategories.map((object, i) => <div> 
+              
+              <button>{object.name}</button>
+            </div>)
+          }
           <div>
-            <button>{foundLocation}</button>
+            <a>{foundLocation}</a>
           </div>
 				</div>
 			</div>
