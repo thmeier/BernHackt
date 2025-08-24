@@ -19,7 +19,7 @@ Das wird ermöglicht dur en Digital Twin vo de Ladeflächi wo dir glichziitig ze
 
 ## 4. Why It’s Special (1:30–2:00)
 
-No AI, no Bullshit, eusi Lösig isch simpel, skalierbar und chostet nur en Bruchteil vo dem was d Konkurrenz mit em Training vo Model verballeret.
+No AI, no Bullshit, eusi Lösig isch simpel, skalierbar und chostet nur en Bruchteil vo dem was d Konkurrenz mit em Training vo Machine Learning Model verballeret.
 Wie Google Maps für din Ihchauf, navigiert dich StoreNav durchs Ihchaufslabyrinth.
 
 ## 5. Impact & Potential (2:00–2:40)
