@@ -21,26 +21,17 @@ Das wird ermöglicht durch eh perfekti Digitalisierig vo allne Etage vom Gschäf
 
 ## 4. Why It’s Special (1:30–2:00)
 
-No AI, no bullshit, eusi Lösig isch simpel, skalierbar und chostet nur en bruchteil vo dem was d Konkurrenz mit training vo Model verballeret.
-S Google Maps vo Warehüser, als erster ide Industrie.
-
-!! What’s your unique value proposition? !!
-!! Why is your approach better than existing solutions? !!
-Mention any tech innovation if it’s impressive but keep it accessible.
+No AI, no bullshit, eusi Lösig isch simpel, skalierbar und chostet nur en bruchteil vo dem was d Konkurrenz mit em Training vo Model verballeret.
+Wahrhaftig s Google Maps vo Warehüser, als erster ide Industrie.
 
 ## 5. Impact & Potential (2:00–2:40)
 
-Kunden könne schneller und glücklicher Ihr gewünschtes Produkt finden. Einkäufe werden nie mehr aus langen suchen bestehen sonder zielgerichtet zum gewünschten produkt führen.
-
-Who benefits, and how big is the potential impact/market/community?
-
-If time: mention how it could scale or evolve beyond the hackathon.
+Kunde chönnd schneller und glücklicher ihri gwünschte Produkt finde und d Ahgstellte werded nöd unnötig vo de Arbeit abglenkt.
+Nie meh chaotisches Umherirre im Lade, sonder zielgrichtet zum gwünschte Produkt cho, dank !!StoreNav!!
 
 ## 6. Call to Action / Closing (2:40–3:00)
 
-Wir glauben an eine Welt in der niemand mehr seine zeit verschwenden muss oder die der Angestellten um etwas zu finden das nicht umbedingt an dem Ort ist an dem man es erwartet. Wir hoffen das unser Produkt den entscheidenden unterschied sein wird.
-
-
-Wrap up with a vision statement: “We imagine a world where…”
-
-Thank the judges and invite them to try your demo.
+Mir glaubed an eh Welt wo niemert meh sini Ziit sinnlos verschwende muss, weder Kund no Ahgstellte.
+Drum glaubed mir, dass StoreNav de entscheidend Unterschied si wird. 
+...dramatische Pause...
+Danke!
